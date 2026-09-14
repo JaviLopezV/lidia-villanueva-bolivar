@@ -1,0 +1,11 @@
+/node_modules
+/.next
+/out
+.DS_Store
+*.pem
+.env*
+!.env.example
+npm-debug.log*
+/public/sw.js
+/public/workbox-*.js
+*.tsbuildinfo
