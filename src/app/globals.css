@@ -864,12 +864,6 @@ select:focus-visible {
 .legal-page li + li {
   margin-top: 12px;
 }
-.loading-indicator {
-  padding: 40px;
-  text-align: center;
-  font-size: 40px;
-  color: #6d28d9;
-}
 @media (max-width: 1150px) {
   .header {
     flex-wrap: wrap;

@@ -73,6 +73,7 @@ export function Header({ locale }: { locale: Language }) {
   function changeLanguage(next: string) {
     const path = pathname.replace(/^\/(es|ca|en)(?=\/|$)/, `/${next}`);
     // Native navigation also refreshes <html lang> and keeps the current section.
+    window.dispatchEvent(new Event("site-navigation-start"));
     window.location.assign(
       path + window.location.search + window.location.hash,
     );

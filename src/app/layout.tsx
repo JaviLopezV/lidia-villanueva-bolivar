@@ -2,6 +2,8 @@ import { headers } from "next/headers";
 import { isLanguage, translator } from "@/i18n/translate";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./site-loader.css";
+import SiteLoader from "./site-loader";
 const baseMetadata: Metadata = {
   title: "Lidia Villanueva Bolívar · Pilates con calma",
   description:
@@ -17,7 +19,10 @@ export default async function RootLayout({
   const locale = isLanguage(requestedLocale) ? requestedLocale : "es";
   return (
     <html lang={locale}>
-      <body>{children}</body>
+      <body>
+        <SiteLoader />
+        {children}
+      </body>
     </html>
   );
 }
