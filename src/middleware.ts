@@ -7,7 +7,11 @@ export function middleware(request: NextRequest) {
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
 
-  if (hasLocale) return NextResponse.next();
+  if (hasLocale) {
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set("x-site-locale", pathname.split("/")[1]);
+    return NextResponse.next({ request: { headers: requestHeaders } });
+  }
   return NextResponse.redirect(new URL(`/es${pathname}`, request.url));
 }
 

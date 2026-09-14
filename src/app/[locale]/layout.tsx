@@ -1,6 +1,16 @@
-import { redirect } from "next/navigation";
-export function generateStaticParams() { return [{locale: "es"}]; }
-export default async function LocaleLayout({children, params}: {children: React.ReactNode; params: Promise<{locale: string}>}) {
- const {locale} = await params; if(locale !== "es") redirect("/es");
- return <>{children}</>;
+import { notFound } from "next/navigation";
+import { languages, isLanguage } from "@/i18n/translate";
+export function generateStaticParams() {
+  return languages.map((locale) => ({ locale }));
+}
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!isLanguage(locale)) notFound();
+  return <>{children}</>;
 }
