@@ -2,6 +2,7 @@ import { translator, type Language } from "@/i18n/translate";
 import Link from "next/link";
 export function Footer({ locale }: { locale: Language }) {
   const t = translator(locale);
+  //
   return (
     <footer className="footer">
       <Link className="footer-brand" href={`/${locale}`}>
