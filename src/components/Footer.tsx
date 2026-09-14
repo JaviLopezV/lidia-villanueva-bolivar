@@ -8,10 +8,7 @@ export function Footer({ locale }: { locale: Language }) {
         {t("Lidia Villanueva Bolívar")}
         <span>{t("Pilates con calma. Movimiento con sentido.")}</span>
       </Link>
-      <p>
-        © {new Date().getFullYear()}
-        {t(" · Javier López Villanueva")}
-      </p>
+
       <Link href={`/${locale}#inicio`}>{t("Volver al inicio ↑")}</Link>
       <nav className="legal-links" aria-label={t("Información legal")}>
         <Link href={`/${locale}/legal-notice`}>{t("Aviso legal")}</Link>
@@ -19,6 +16,10 @@ export function Footer({ locale }: { locale: Language }) {
         <Link href={`/${locale}/cookies`}>{t("Cookies")}</Link>
         <Link href={`/${locale}/terms`}>{t("Condiciones de uso")}</Link>
       </nav>
+      <p>
+        © {new Date().getFullYear()}
+        {t(" · Javier López Villanueva")}
+      </p>
     </footer>
   );
 }
