@@ -103,7 +103,7 @@ export default async function HomePage({
             <p>
               {t("La experiencia me ha enseñado")}
               <br />
-              {t("a escuchar. El Pilates,")}
+              {t("a escuchar. Pilates,")}
               <br />
               <em>{t("a seguir descubriendo.")}</em>
             </p>
